@@ -162,5 +162,5 @@ app.listen(port, () => {
 });
 
 app.get("/", (res, req) => {
-    res.send("Yay!!!")
+    req.send("Yay!!!")
 })
