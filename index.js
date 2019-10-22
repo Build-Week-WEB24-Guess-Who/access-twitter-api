@@ -157,4 +157,10 @@ app.get('/MarkSanford', function (req, res) {
 const port = process.env.PORT;
 console.log(randomDate());
 
-app.listen(port);
+app.listen(port, () => {
+    console.log("I work");
+});
+
+app.get("/", (res, req) => {
+    res.send("Yay!!!")
+})
