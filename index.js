@@ -159,6 +159,7 @@ console.log(randomDate());
 
 app.listen(port, () => {
     console.log("I work");
+    console.log(port);
 });
 
 app.get("/", (res, req) => {
