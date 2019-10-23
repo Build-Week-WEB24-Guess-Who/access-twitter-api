@@ -1,15 +1,17 @@
 require("dotenv").config();
+const cors = require("cors");
 
 var Twit = require('twit')
 
 var express = require('express')
 var app = express()
+app.use(cors());
 
 var T = new Twit({
-    consumer_key:         '5Mvy9kwLOmPR7KGwDt7YN2L0k',
-    consumer_secret:      'PdOnltBXQ7KCavmcVBPWESSJvHUREHBjirXvna48IVrkXz4iBg',
-    access_token:         '2861432285-6s8XJOO07yS7wKViPkfLnv0XYr6UFPjCZgd99LX',
-    access_token_secret:  'xn3gI93W5SWIjzrIEuKEqWFtDsLNBQ14BZDi4W65XKjPN',
+    consumer_key:         process.env.CONSUMER_KEY,
+    consumer_secret:      process.env.CONSUMER_SECRET,
+    access_token:         process.env.ACCESS_TOKEN,
+    access_token_secret:  process.env.ACCESS_TOKEN_SECRET,
     timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
     strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
